@@ -1,0 +1,50 @@
+﻿@model IEnumerable<FinalProject.Models.Order>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>訂單資料</h2>
+
+<p>
+    @Html.ActionLink("新增訂單", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            會員姓名
+        </th>
+        <th>
+            票別
+        </th>
+
+        <th>
+            購買數量
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Member.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ticket.Type)
+
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Count2)
+
+            </td>
+            <td>
+                @Html.ActionLink("修改", "Edit", new { id = item.OrderID }) |
+                @Html.ActionLink("訂單詳細資料", "Details", new { id = item.OrderID }) |
+                @Html.ActionLink("刪除", "Delete", new { id = item.OrderID })
+            </td>
+        </tr>
+    }
+
+</table>

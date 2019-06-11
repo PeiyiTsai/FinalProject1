@@ -47,10 +47,10 @@ namespace FinalProject.Controllers
                     members = members.OrderByDescending(s => s.Name);
                     break;
                 case "Date":
-                    members = members.OrderBy(s => s.OrderDate);
+                    members = members.OrderBy(s => s.MemberDate);
                     break;
                 case "date_desc":
-                    members = members.OrderByDescending(s => s.OrderDate);
+                    members = members.OrderByDescending(s => s.MemberDate);
                     break;
                 default:
                     members = members.OrderBy(s => s.Name);
